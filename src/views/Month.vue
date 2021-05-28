@@ -41,12 +41,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 30px 0;
   }
   #MContent .son{
     width: 580px;
     height: 350px;
     background: #FFAB36;
-    margin: 30px 0;
+    margin: 20px 0;
     padding: 20px 0 0 10px;
   }
 </style>

@@ -72,6 +72,7 @@
 <style scoped>
   #PContent{
     width: 70%;
-    margin: 30px auto;
+    padding: 30px 0;
+    margin: 0 auto;
   }
 </style>

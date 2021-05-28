@@ -6,7 +6,7 @@
       </div>
       <div class="famous">
         <!--        <p>大声道你家顺口溜的缴纳快乐暑假打了开始就爱说就打开了</p>-->
-        <p>{{famous}}——{{author}}</p>
+        <p :title="famousAuthor">{{famousAuthor}}</p>
       </div>
       <div class="options">
         <ul v-show="showNav">
@@ -65,8 +65,7 @@
       }
 
       //获取名句API
-      const famous = ref('')
-      const author = ref('')
+      const famousAuthor = ref('')
       const {proxy}: any = getCurrentInstance();
       onMounted(() => {
         proxy.$api.get(
@@ -74,14 +73,14 @@
           {},
           {'key': '9269070fbd6878795832583bba8b7f66'},
           (success) => {
-            famous.value = success.data.newslist[0].content
-            author.value = success.data.newslist[0].author
+            famousAuthor.value = success.data.newslist[0].content + '——' + success.data.newslist[0].author
+
           },
           (failure) => {
-            famous.value = '发生了错误！QAQ'
+            famousAuthor.value = '发生了错误！QAQ'
           },
           'http://api.tianapi.com'
-          )
+        )
 
       })
 
@@ -89,8 +88,7 @@
         jump1,
         showNav,
         isSelect,
-        famous,
-        author
+        famousAuthor
       }
     }
   })
@@ -124,14 +122,25 @@
     height: 100%;
   }
 
-  @media screen and (max-width: 805px) {
-    #header .content .famous {
-      display: none;
-    }
+
+  #header .content .famous {
+    width: 60%;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   #header .content .famous p {
     margin: 0;
+  }
+
+  @media screen and (max-width: 805px) {
+    #header .content .famous {
+      display: none;
+    }
   }
 
   #header .content .options ul {

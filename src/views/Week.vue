@@ -50,10 +50,11 @@
 <style scoped>
  #content{
    width: 90%;
-   margin: 20px auto;
+   margin: 0 auto;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+   padding: 30px 0;
  }
  #content .son{
    width: 450px;

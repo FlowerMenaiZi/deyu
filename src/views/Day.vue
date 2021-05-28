@@ -100,7 +100,7 @@
 
 <style scoped>
 #day{
-  width: 70%;
+  width: 61%;
   margin: 20px auto;
   display: flex;
   justify-content: space-between;
@@ -109,6 +109,6 @@
   width:80%;
 }
 #day .date{
-  width: 19%;
+  width: 15%;
 }
 </style>
