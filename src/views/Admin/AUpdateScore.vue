@@ -146,6 +146,7 @@
           (error) => {
             if(error.data==="认证失败"){
               message.error('会话过期请重新登录')
+              localStorage.removeItem('login')
               router.push("/109in")
             }
           }
